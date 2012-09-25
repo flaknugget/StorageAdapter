@@ -41,7 +41,7 @@ Store.prototype.getAll = function ( ) {
 */
 Store.prototype.set = function ( model ) {
     if(!model.id)
-        model.id = Utils.guid();
+        model.id = model.attributes.id = Utils.guid();
     
     this.data[model.id] = model;
     this.save();
